@@ -49,9 +49,9 @@ gcloud projects add-iam-policy-binding vanti-data-gobernance-prd \
 <br>
 dirigase a la URL: https://console.cloud.google.com/functions de su proyecto
 
--Haga clic en create funtion
--Ponga el nombre a la cloud function "cf-dataplex-dataquality-scans-backup"
--Escoja la región "us-central1"
+-Haga clic en create funtion  
+-Ponga el nombre a la cloud function "cf-dataplex-dataquality-scans-backup"  
+-Escoja la región "us-central1"  
 -Escoja el trigger "HTTPS" y "Require authentication"
 -En la sección "Runtime, build, connections and security settings" despliegue y en "Runtime service account" ponga:
  la cuenta de servicio que se creó en el paso 1 "sa-backupdqsc-dplex-gob-dq@vanti-data-gobernance-prd.iam.gserviceaccount.com"
