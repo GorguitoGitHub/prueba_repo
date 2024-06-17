@@ -46,32 +46,31 @@ gcloud projects add-iam-policy-binding vanti-data-gobernance-prd \
 ```
 
 ## Parte 2: Creación cloud function (cf-dataplex-dataquality-scans-backup)
-<br>
+
 dirigase a la URL: https://console.cloud.google.com/functions de su proyecto
 
 -Haga clic en create funtion  
 -Ponga el nombre a la cloud function "cf-dataplex-dataquality-scans-backup"  
 -Escoja la región "us-central1"  
--Escoja el trigger "HTTPS" y "Require authentication"
--En la sección "Runtime, build, connections and security settings" despliegue y en "Runtime service account" ponga:
- la cuenta de servicio que se creó en el paso 1 "sa-backupdqsc-dplex-gob-dq@vanti-data-gobernance-prd.iam.gserviceaccount.com"
--En la sección "Runtime environment variables" agregue las siguientes variables de entorno:
+-Escoja el trigger "HTTPS" y "Require authentication"  
+-En la sección "Runtime, build, connections and security settings" despliegue y en "Runtime service account" ponga:  
+ la cuenta de servicio que se creó en el paso 1 "sa-backupdqsc-dplex-gob-dq@vanti-data-gobernance-prd.iam.gserviceaccount.com"  
+-En la sección "Runtime environment variables" agregue las siguientes variables de entorno:  
 
 PROJECT            = vanti-data-gobernance-prd
 LOCATION_1         = us-central1
 LOCATION_2         = us-east1
 BUCKET_DESTINATION = vanti-data-gobernance-prd-dataplex-backup
 
-Haga clic en next
+Haga clic en next  
 
--En la casilla Runtime escoja "python 3.10" n
--En la casilla entry point coloque "backup_data_scans"
--Copie y pegue el código que está en main.py de este repositorio en main.py del area de trabajo de la cloud function
--Copie y pegue el código que está en requirements.txt de este repositorio en requirements.txt del area de trabajo de la cloud function
--Haga clic en deploy.
+-En la casilla Runtime escoja "python 3.10"  
+-En la casilla entry point coloque "backup_data_scans"  
+-Copie y pegue el código que está en main.py de este repositorio en main.py del area de trabajo de la cloud function  
+-Copie y pegue el código que está en requirements.txt de este repositorio en requirements.txt del area de trabajo de la cloud function  
+-Haga clic en deploy.  
 
--Luego de haber creado la cloud function, dar clic en la cloud fucntion creada y en la casilla permisos darle permiso a la cuenta   "sa-backupdqsc-dplex-gob-dq@vanti-data-gobernance-prd.iam.gserviceaccount.com"
-<br>
+-Luego de haber creado la cloud function, dar clic en la cloud fucntion creada y en la casilla permisos darle permiso a la cuenta  "sa-backupdqsc-dplex-gob-dq@vanti-data-gobernance-prd.iam.gserviceaccount.com"  
 
 
 ## Parte 3: Creación cloud schedule
@@ -94,19 +93,21 @@ Luego de haber creado el schedule, dar clic en el schedule creado y en la casill
 
 ## Parte 4: Creación (Bucket) cloud storage
 
-dirigase a la URL: https://console.cloud.google.com/storage de su proyecto
-Hacer clic en create
-Poner el nombre de bucket "vanti-data-gobernance-prd-dataplex-backup"
-En la sección tipo de localización escojer "Region"
-En la sección clase de almacenamiento escojer "Standard"
-En la sección cómo controlar el acceso a los objetos escojer "Aplicar la prevención de acceso público en este segmento" y "uniforme"
-En la sección cómo proteger los datos del objeto escojer "Política de eliminación temporal (para recuperación de datos) y 7 días de duración"
-Activar el control de versiones así:
-"Política de eliminación temporal (para recuperación de datos)" 10 días
-"Política de eliminación temporal (para recuperación de datos)" 10 días
+dirigase a la URL: https://console.cloud.google.com/storage de su proyecto  
+
+Hacer clic en create  
+
+Poner el nombre de bucket "vanti-data-gobernance-prd-dataplex-backup"  
+En la sección tipo de localización escojer "Region"  
+En la sección clase de almacenamiento escojer "Standard"  
+En la sección cómo controlar el acceso a los objetos escojer "Aplicar la prevención de acceso público en este segmento" y "uniforme"  
+En la sección cómo proteger los datos del objeto escojer "Política de eliminación temporal (para recuperación de datos) y 7 días de duración"  
+Activar el control de versiones así:  
+"Política de eliminación temporal (para recuperación de datos)" 10 días  
+"Política de eliminación temporal (para recuperación de datos)" 10 días  
 
 Haga clic en crear 
 
-Luego de haber creado el Bucket, dar clic en el Bucket creado y en la casilla permisos darle permiso a la cuenta "sa-backupdqsc-dplex-gob-dq@vanti-data-gobernance-prd.iam.gserviceaccount.com"
+Luego de haber creado el Bucket, dar clic en el Bucket creado y en la casilla permisos darle permiso a la cuenta  "sa-backupdqsc-dplex-gob-dq@vanti-data-gobernance-prd.iam.gserviceaccount.com"  
 
 
