@@ -16,10 +16,12 @@ Cloud Scheduler: Programa la ejecución de una Cloud Function cada día a las 23
 Cloud Storage (Bucket): Almacena las copias de seguridad de los análisis de calidad de datos de dataplex.
 Dataplex API: Proporciona acceso a los datos de Dataplex para realizar la copia de seguridad.
 
-### Parte 1: Creación cuenta de servicio
-### Parte 2: Creación cloud function
-### Parte 3: Creación cloud schedule
-### Parte 4: Creación (Bucket) cloud storage
+#### Parte 1: Creación cuenta de servicio
+#### Parte 2: Creación cloud function
+#### Parte 3: Creación cloud schedule
+#### Parte 4: Creación (Bucket) cloud storage
+
+
 
 
 ## Parte 1: Creación cuenta de servicio (sa-backupdqsc-dplex-gob-dq) y asignación de permiso para lectura de datos de Datascan.
@@ -57,10 +59,10 @@ dirigase a la URL: https://console.cloud.google.com/functions de su proyecto
  la cuenta de servicio que se creó en el paso 1 "sa-backupdqsc-dplex-gob-dq@vanti-data-gobernance-prd.iam.gserviceaccount.com"  
 -En la sección "Runtime environment variables" agregue las siguientes variables de entorno:  
 
-PROJECT            = vanti-data-gobernance-prd
-LOCATION_1         = us-central1
-LOCATION_2         = us-east1
-BUCKET_DESTINATION = vanti-data-gobernance-prd-dataplex-backup
+PROJECT            = vanti-data-gobernance-prd  
+LOCATION_1         = us-central1  
+LOCATION_2         = us-east1  
+BUCKET_DESTINATION = vanti-data-gobernance-prd-dataplex-backup  
 
 Haga clic en next  
 
