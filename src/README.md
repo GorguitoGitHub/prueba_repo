@@ -51,7 +51,7 @@ dirigase a la URL: https://console.cloud.google.com/functions de su proyecto
 
 Haga clic en create funtion
 
-Ponga el nombre a la cloud function "cf-dataplex-dataquality-scans-backup"
+Ponga el nombre a la cloud function "cf-dataplex-dataquality-scans-backup"\n
 Escoja la región "us-central1"
 Escoja el trigger "HTTPS" y "Require authentication"
 En la sección "Runtime, build, connections and security settings" despliegue y en "Runtime service account" ponga:
