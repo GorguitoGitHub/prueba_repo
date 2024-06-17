@@ -5,7 +5,7 @@ Implementación de arquitectura para realizar copias de seguridad de Dataplex a 
 
 Este documento describe el proceso para implementar una Cloud Function en Google Cloud Platform (GCP), este proceso consiste en disparar una cloud function mediante Cloud Scheduler. La función ejecuta un script de python que realiza una copia de seguridad de los análisis de calidad de datos y de perfilamiento de Dataplex en un bucket de Cloud Storage.
 
-!["Texto alternativo de la imagen"](\architecture.drawio.png)
+!["Arquitectura implementada"](/architecture.drawio.png)
 
 
 ## Implementación
