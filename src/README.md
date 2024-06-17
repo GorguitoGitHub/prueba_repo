@@ -3,7 +3,7 @@
 Implementación de arquitectura para realizar copias de seguridad de Dataplex a Cloud Storage.
 
 
-Este documento describe el proceso para implementar una Cloud Function en Google Cloud Platform (GCP), este proceso consiste en disparar una cloud fucntion mediante Cloud Scheduler. La función ejecuta un script de pýthon que realiza una copia de seguridad de los análisis de calidad de datos y de perfilamiento de Dataplex en un bucket de Cloud Storage.
+Este documento describe el proceso para implementar una Cloud Function en Google Cloud Platform (GCP), este proceso consiste en disparar una cloud function mediante Cloud Scheduler. La función ejecuta un script de python que realiza una copia de seguridad de los análisis de calidad de datos y de perfilamiento de Dataplex en un bucket de Cloud Storage.
 
 
 ## Implementación
@@ -48,7 +48,9 @@ gcloud projects add-iam-policy-binding vanti-data-gobernance-prd \
 ## Parte 2: Creación cloud function (cf-dataplex-dataquality-scans-backup)
 
 dirigase a la URL: https://console.cloud.google.com/functions de su proyecto
+
 Haga clic en create funtion
+
 Ponga el nombre a la cloud function "cf-dataplex-dataquality-scans-backup"
 Escoja la región "us-central1"
 Escoja el trigger "HTTPS" y "Require authentication"
@@ -63,7 +65,7 @@ BUCKET_DESTINATION = vanti-data-gobernance-prd-dataplex-backup
 
 Haga clic en next
 
-En la casilla Runtime escoja "python 3.10"
+En la casilla Runtime escoja "python 3.10" n
 En la casilla entry point coloque "backup_data_scans"
 Copie y pegue el código que está en main.py de este repositorio en main.py del area de trabajo de la cloud function
 Copie y pegue el código que está en requirements.txt de este repositorio en requirements.txt del area de trabajo de la cloud function
