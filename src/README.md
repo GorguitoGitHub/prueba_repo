@@ -13,6 +13,3 @@ Cloud Scheduler: Programa la ejecución de la Cloud Function a las 23:00 horas c
 Cloud Function: Implementa la lógica para realizar la copia de seguridad de los análisis de Dataplex.
 Dataplex API: Proporciona acceso a los datos de Dataplex para realizar la copia de seguridad.
 Cloud Storage: Almacena las copias de seguridad de los análisis.
-
-![Arquitectura: ](Calidad-Arquitectura-Dataplex-Backups-scans dataquality.drawio.png)
-
