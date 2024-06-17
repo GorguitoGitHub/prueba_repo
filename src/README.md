@@ -10,11 +10,11 @@ Este documento describe el proceso para implementar una Cloud Function en Google
 
 Para llevar a cabo el proceso descrito anteriormente se deben implementar los siguientes servicios:
 
-Cuenta de servicio: Permite otorgar acceso a recursos de GCP a aplicaciones y servidores.
-Cloud Function: Implementa la lógica para realizar la copia de seguridad de los análisis de Dataplex.
-Cloud Scheduler: Programa la ejecución de una Cloud Function cada día a las 23:00 horas.
-Cloud Storage (Bucket): Almacena las copias de seguridad de los análisis de calidad de datos de dataplex.
-Dataplex API: Proporciona acceso a los datos de Dataplex para realizar la copia de seguridad.
+Cuenta de servicio: Permite otorgar acceso a recursos de GCP a aplicaciones y servidores.  
+Cloud Function: Implementa la lógica para realizar la copia de seguridad de los análisis de Dataplex.  
+Cloud Scheduler: Programa la ejecución de una Cloud Function cada día a las 23:00 horas.  
+Cloud Storage (Bucket): Almacena las copias de seguridad de los análisis de calidad de datos de dataplex.  
+Dataplex API: Proporciona acceso a los datos de Dataplex para realizar la copia de seguridad.  
 
 #### Parte 1: Creación cuenta de servicio
 #### Parte 2: Creación cloud function
@@ -77,19 +77,21 @@ Haga clic en next
 
 ## Parte 3: Creación cloud schedule
 
-dirigase a la URL: https://console.cloud.google.com/cloudscheduler de su proyecto
+dirigase a la URL: https://console.cloud.google.com/cloudscheduler de su proyecto  
+
 Haga clic en create job
-Coloque el nombre del cloud schedule "cs-dataplex-dataquality-execute-backup"
-Escoja la región "us-central1"
-Coloque una descripción para el cloud schedule
-coloque la siguiente configuración de frecuencia de ocurrencia "0 23 * * *" para que ocurra cada día a las 23:00 horas
+
+Coloque el nombre del cloud schedule "cs-dataplex-dataquality-execute-backup"  
+Escoja la región "us-central1"  
+Coloque una descripción para el cloud schedule  
+coloque la siguiente configuración de frecuencia de ocurrencia "0 23 * * *" para que ocurra cada día a las 23:00 horas  
 En la casilla Timezone escoja Colombia
 
 En la sección "Configure the execution" escoja la opción HTTP
 
 Haga clic en crear.
 
-Luego de haber creado el schedule, dar clic en el schedule creado y en la casilla permisos darle permiso a la cuenta "sa-backupdqsc-dplex-gob-dq@vanti-data-gobernance-prd.iam.gserviceaccount.com"
+Luego de haber creado el schedule, dar clic en el schedule creado y en la casilla permisos darle permiso a la cuenta  "sa-backupdqsc-dplex-gob-dq@vanti-data-gobernance-prd.iam.gserviceaccount.com"
 
 
 
