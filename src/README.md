@@ -1,24 +1,18 @@
 # Backup Scans Calidad
 
-
-## Set project
-
-```bash
-gcloud config set project vanti-data-gobernance-prd
-```
+Implementación de una Cloud Function para realizar copias de seguridad de Dataplex a Cloud Storage.
 
 
-## Service Account
+Este documento describe el proceso para implementar una Cloud Function llamada "cf-dataplex-dataquality-scans-backup" en Google Cloud Platform (GCP), este proceso consiste en disparar a las 23:00 horas cada día mediante Cloud Scheduler una cloud function. La función realiza una copia de seguridad de los análisis de calidad de datos y de perfilamiento de Dataplex en un bucket de Cloud Storage denominado "vanti-data-gobernance-prd-dataplex-backup".
 
-```bash
-gcloud gcloud iam service-accounts create sa-backupdqsc-dplex-gob-dq --description "Cuenta de servicio para backup data scans dataplex"
+## Arquitectura
 
-gcloud projects add-iam-policy-binding vanti-data-gobernance-prd \
---member sa-backupdqsc-dplex-gob-dq@vanti-data-gobernance-dev.iam.gserviceaccount.com \
---role roles/run.invoker \
---condition="resource.zone == 'us-central1'"
+La arquitectura del sistema se compone de los siguientes elementos:
 
-gcloud projects add-iam-policy-binding vanti-data-gobernance-prd \
---member sa-backupdqsc-dplex-gob-dq@vanti-data-gobernance-dev.iam.gserviceaccount.com \
---role roles/cloudfunctions.invoker \
---condition="resource.zone == 'us-central1'"
+Cloud Scheduler: Programa la ejecución de la Cloud Function a las 23:00 horas cada día.
+Cloud Function: Implementa la lógica para realizar la copia de seguridad de los análisis de Dataplex.
+Dataplex API: Proporciona acceso a los datos de Dataplex para realizar la copia de seguridad.
+Cloud Storage: Almacena las copias de seguridad de los análisis.
+
+![Arquitectura: ](Calidad-Arquitectura-Dataplex-Backups-scans dataquality.drawio.png)
+
