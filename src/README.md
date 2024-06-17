@@ -1,9 +1,12 @@
 # Backup Scans de Calidad de Dataplex
 
-##Implementación de arquitectura para realizar copias de seguridad de Dataplex a Cloud Storage.
+## Implementación de arquitectura para realizar copias de seguridad de Dataplex a Cloud Storage.
 
 
-Este documento describe el proceso para implementar una Cloud Function en Google Cloud Platform (GCP), este proceso consiste en disparar una cloud function mediante Cloud Scheduler. La función ejecuta un script de python que realiza una copia de seguridad de los análisis de calidad de datos y de perfilamiento de Dataplex en un bucket de Cloud Storage.
+Este documento describe el proceso para implementar varios servicios de Google Cloud Platform (GCP) que permitan hacer el backup diario de la configuración de scans de calidad y de perfilamiento de datos de dataplex, este proceso consiste en crear una cloud funtion que es disparada mediante Cloud Scheduler. La cloud function ejecuta un script de python que realiza un requerimiento a la api de dataplex obteniendo todas las configuraciones de todos los scans y perfilamientos existentes dentro del proyecto "vanti-data-gobernance-prd", luego se crea una copia de seguridad de los análisis de calidad de datos y de perfilamiento de Dataplex en un bucket de Cloud Storage.
+
+El flujo de la información y el desarrollo del sistema se basa en la siguiente arquitectura:
+
 
 !["Arquitectura implementada"](/src/architecture.drawio.png)
 
