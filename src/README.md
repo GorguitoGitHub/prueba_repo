@@ -46,17 +46,16 @@ gcloud projects add-iam-policy-binding vanti-data-gobernance-prd \
 ```
 
 ## Parte 2: Creación cloud function (cf-dataplex-dataquality-scans-backup)
-
+<br>
 dirigase a la URL: https://console.cloud.google.com/functions de su proyecto
 
-Haga clic en create funtion
-
-Ponga el nombre a la cloud function "cf-dataplex-dataquality-scans-backup"\n
-Escoja la región "us-central1"
-Escoja el trigger "HTTPS" y "Require authentication"
-En la sección "Runtime, build, connections and security settings" despliegue y en "Runtime service account" ponga:
-la cuenta de servicio que se creó en el paso 1 "sa-backupdqsc-dplex-gob-dq@vanti-data-gobernance-prd.iam.gserviceaccount.com"
-En la sección "Runtime environment variables" agregue las siguientes variables de entorno:
+-Haga clic en create funtion
+-Ponga el nombre a la cloud function "cf-dataplex-dataquality-scans-backup"
+-Escoja la región "us-central1"
+-Escoja el trigger "HTTPS" y "Require authentication"
+-En la sección "Runtime, build, connections and security settings" despliegue y en "Runtime service account" ponga:
+ la cuenta de servicio que se creó en el paso 1 "sa-backupdqsc-dplex-gob-dq@vanti-data-gobernance-prd.iam.gserviceaccount.com"
+-En la sección "Runtime environment variables" agregue las siguientes variables de entorno:
 
 PROJECT            = vanti-data-gobernance-prd
 LOCATION_1         = us-central1
@@ -65,14 +64,14 @@ BUCKET_DESTINATION = vanti-data-gobernance-prd-dataplex-backup
 
 Haga clic en next
 
-En la casilla Runtime escoja "python 3.10" n
-En la casilla entry point coloque "backup_data_scans"
-Copie y pegue el código que está en main.py de este repositorio en main.py del area de trabajo de la cloud function
-Copie y pegue el código que está en requirements.txt de este repositorio en requirements.txt del area de trabajo de la cloud function
-Haga clic en deploy.
+-En la casilla Runtime escoja "python 3.10" n
+-En la casilla entry point coloque "backup_data_scans"
+-Copie y pegue el código que está en main.py de este repositorio en main.py del area de trabajo de la cloud function
+-Copie y pegue el código que está en requirements.txt de este repositorio en requirements.txt del area de trabajo de la cloud function
+-Haga clic en deploy.
 
-Luego de haber creado la cloud function, dar clic en la cloud fucntion creada y en la casilla permisos darle permiso a la cuenta "sa-backupdqsc-dplex-gob-dq@vanti-data-gobernance-prd.iam.gserviceaccount.com"
-
+-Luego de haber creado la cloud function, dar clic en la cloud fucntion creada y en la casilla permisos darle permiso a la cuenta   "sa-backupdqsc-dplex-gob-dq@vanti-data-gobernance-prd.iam.gserviceaccount.com"
+<br>
 
 
 ## Parte 3: Creación cloud schedule
