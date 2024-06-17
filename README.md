@@ -9,7 +9,7 @@ La cloud function ejecuta un script de python que realiza un requerimiento a la 
 El flujo de la información y el desarrollo del sistema se basa en la siguiente arquitectura:
 
 
-!["Arquitectura implementada"](/desarrollo_backup_scans_calidad_dataplex/architecture.drawio.png)
+!["Arquitectura implementada"](/architecture.drawio.png)
 
 
 ## Implementación
